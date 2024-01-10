@@ -1,41 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter/pages/formulaire.dart';
+import 'package:test_flutter/pages/grille.dart';
+import 'package:test_flutter/pages/home.dart';
+import 'package:test_flutter/pages/supadata.dart';
 
 void main() {
   runApp(
     MaterialApp(
-        title: 'Hello',
-        color: const Color.fromARGB(255, 230, 230, 210),
-        routes: <String, WidgetBuilder>{
-          '/': (BuildContext context) {
-            return Scaffold(
-              appBar: AppBar(),
-              body: Container(
-                color: Colors.amber,
-                child: MaterialButton(
-                  color: Colors.black,
-                  child: const Text(
-                    "aller sur parametre",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/parametre');
-                  },
-                ),
-              ),
-              drawer: Drawer(
-                child: Container(),
-              ),
-              floatingActionButton: FloatingActionButton(
-                onPressed: () {},
-                child: const Icon(Icons.add),
-              ),
-            );
-          },
-          '/parametre': (BuildContext context) {
-            return Container(
-              color: const Color.fromARGB(255, 130, 45, 62),
-            );
-          },
-        }),
+      debugShowCheckedModeBanner: false,
+      title: 'Hello',
+      color: const Color.fromARGB(255, 230, 230, 210),
+      routes: <String, WidgetBuilder>{
+        '/': (BuildContext context) => Home(),
+        '/formulaire': (BuildContext context) => Formulaire(),
+        '/grille': (BuildContext context) => Grille(),
+        '/supabase': (BuildContext context) => Supabase(),
+      },
+    ),
   );
 }
